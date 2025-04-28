@@ -13,7 +13,7 @@ struct ClaimsView: View {
     
     var body: some View {
         VStack {
-            List(viewModel.claims) { claim in
+            List(viewModel.filteredClaims) { claim in
                 ClaimElementView(data: claim) {
                     navigationManager.navigateTo(.claimDetail(claimData: claim))
                 }
