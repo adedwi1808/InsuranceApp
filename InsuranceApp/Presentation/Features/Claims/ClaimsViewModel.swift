@@ -15,6 +15,7 @@ class ClaimsViewModel: ObservableObject {
         }
     }
     @Published var filteredClaims: [Claim] = []
+    @Published var isLoading: Bool = false
     
     var services: ClaimsServiceProtocol
     
@@ -24,22 +25,22 @@ class ClaimsViewModel: ObservableObject {
     
     @MainActor
     func getClaims() async throws {
+        isLoading = true
         do {
             let response = try await services.getClaims(endpoint: .posts)
             mapClaimResponses(response: response)
+            isLoading = false
         } catch let error as NetworkError {
             print(error)
+            isLoading = false
         }
     }
     
     private func mapClaimResponses(response: [ClaimResponseModel]) {
-        DispatchQueue.main.async { [weak self] in
-            guard let self else { return }
-            claims = response.map { responseElement in
-                responseElement.mapToClaim()
-            }
-            filterClaims()
+        claims = response.map { responseElement in
+            responseElement.mapToClaim()
         }
+        filterClaims()
     }
     
     private func filterClaims() {

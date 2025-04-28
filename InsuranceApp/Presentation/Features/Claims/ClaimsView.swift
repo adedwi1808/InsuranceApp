@@ -12,14 +12,23 @@ struct ClaimsView: View {
     @StateObject var viewModel: ClaimsViewModel = ClaimsViewModel()
     
     var body: some View {
-        VStack {
-            List(viewModel.filteredClaims) { claim in
-                ClaimElementView(data: claim) {
-                    navigationManager.navigateTo(.claimDetail(claimData: claim))
+        ZStack {
+            VStack {
+                List(viewModel.filteredClaims) { claim in
+                    ClaimElementView(data: claim) {
+                        navigationManager.navigateTo(.claimDetail(claimData: claim))
+                    }
                 }
+                .listStyle(.plain)
+                .searchable(text: $viewModel.searchText)
             }
-            .listStyle(.plain)
-            .searchable(text: $viewModel.searchText)
+            
+            if viewModel.isLoading {
+                ProgressView()
+                    .tint(.white)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(.black.opacity(0.45))
+            }
         }
         .navigationTitle("Claims")
         .onAppear {
