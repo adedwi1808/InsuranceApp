@@ -20,3 +20,5 @@ struct Claim: Identifiable {
         Claim(userId: 125, id: 4, title: "Four", body: "Four Desc"),
     ]
 }
+
+extension Claim: Equatable, Hashable {}
