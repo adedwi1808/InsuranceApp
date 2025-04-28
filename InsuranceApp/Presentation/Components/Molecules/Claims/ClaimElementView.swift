@@ -13,14 +13,14 @@ struct ClaimElementView: View {
     var body: some View {
         Button(action: onClick) {
             VStack(alignment: .leading, spacing: 8) {
-                Text("ID: \(data.userId)")
+                Text(data.title)
                     .font(.system(size: 14, weight: .bold))
                 
-                Text(data.title)
-                    .font(.system(size: 14, weight: .regular))
+                Text("Claimant ID: \(data.userId)")
+                    .font(.system(size: 13, weight: .regular))
                 
                 Text(data.body)
-                    .font(.system(size: 14, weight: .regular))
+                    .font(.system(size: 13, weight: .regular))
                     .multilineTextAlignment(.leading)
                     .lineLimit(2)
                     .foregroundStyle(.gray)
