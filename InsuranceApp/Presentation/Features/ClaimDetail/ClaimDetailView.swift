@@ -16,8 +16,7 @@ struct ClaimDetailView: View {
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading, spacing: 12) {
                     Text(claimData.title)
-                        .font(.largeTitle)
-                        .fontWeight(.bold)
+                        .font(.system(size: 22, weight: .black))
                     
                     Text("Claimant ID: \(claimData.userId)")
                         .font(.caption)
