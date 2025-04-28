@@ -15,7 +15,7 @@ struct ContentView: View {
                 .environmentObject(navigationManager)
                 .navigationDestination(for: Route.self) {
                     navigationManager.routesDestination(selectedRoutes: $0)
-                        .navigationBarBackButtonHidden()
+                        .environmentObject(navigationManager)
                 }
         }
     }

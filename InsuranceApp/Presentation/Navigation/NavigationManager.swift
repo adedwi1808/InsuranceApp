@@ -30,12 +30,12 @@ extension NavigationManager {
     @ViewBuilder
     func routesDestination(selectedRoutes: Route) -> some View {
         switch selectedRoutes {
-        default:
-            ContentView()
+        case .claimDetail(let data):
+            ClaimDetailView(claimData: data)
         }
     }
 }
 
 enum Route: Hashable {
-    
+    case claimDetail(claimData: Claim)
 }
