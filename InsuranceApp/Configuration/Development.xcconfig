@@ -1,0 +1,11 @@
+//
+//  Development.xcconfig
+//  InsuranceApp
+//
+//  Created by Ade Dwi Prayitno on 28/04/25.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+
+BASE_URL = jsonplaceholder.typicode.com

@@ -6,19 +6,55 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		AD35F0922DBFDE9D0014DA21 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD5FD8F42DBFC3F200700189 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD5FD8FB2DBFC3F200700189;
+			remoteInfo = InsuranceApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		AD35F08E2DBFDE9D0014DA21 /* InsuranceAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InsuranceAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD5FD8FC2DBFC3F200700189 /* InsuranceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InsuranceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		AD35F0E62DBFE1660014DA21 /* Exceptions for "InsuranceApp" folder in "InsuranceApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = AD5FD8FB2DBFC3F200700189 /* InsuranceApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		AD35F08F2DBFDE9D0014DA21 /* InsuranceAppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = InsuranceAppTests;
+			sourceTree = "<group>";
+		};
 		AD5FD8FE2DBFC3F200700189 /* InsuranceApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				AD35F0E62DBFE1660014DA21 /* Exceptions for "InsuranceApp" folder in "InsuranceApp" target */,
+			);
 			path = InsuranceApp;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AD35F08B2DBFDE9D0014DA21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD5FD8F92DBFC3F200700189 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5FD8FE2DBFC3F200700189 /* InsuranceApp */,
+				AD35F08F2DBFDE9D0014DA21 /* InsuranceAppTests */,
 				AD5FD8FD2DBFC3F200700189 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				AD5FD8FC2DBFC3F200700189 /* InsuranceApp.app */,
+				AD35F08E2DBFDE9D0014DA21 /* InsuranceAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,6 +86,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AD35F08D2DBFDE9D0014DA21 /* InsuranceAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD35F0942DBFDE9D0014DA21 /* Build configuration list for PBXNativeTarget "InsuranceAppTests" */;
+			buildPhases = (
+				AD35F08A2DBFDE9D0014DA21 /* Sources */,
+				AD35F08B2DBFDE9D0014DA21 /* Frameworks */,
+				AD35F08C2DBFDE9D0014DA21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AD35F0932DBFDE9D0014DA21 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				AD35F08F2DBFDE9D0014DA21 /* InsuranceAppTests */,
+			);
+			name = InsuranceAppTests;
+			packageProductDependencies = (
+			);
+			productName = InsuranceAppTests;
+			productReference = AD35F08E2DBFDE9D0014DA21 /* InsuranceAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		AD5FD8FB2DBFC3F200700189 /* InsuranceApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AD5FD9072DBFC3F500700189 /* Build configuration list for PBXNativeTarget "InsuranceApp" */;
@@ -80,6 +141,10 @@
 				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1630;
 				TargetAttributes = {
+					AD35F08D2DBFDE9D0014DA21 = {
+						CreatedOnToolsVersion = 16.3;
+						TestTargetID = AD5FD8FB2DBFC3F200700189;
+					};
 					AD5FD8FB2DBFC3F200700189 = {
 						CreatedOnToolsVersion = 16.3;
 					};
@@ -100,11 +165,19 @@
 			projectRoot = "";
 			targets = (
 				AD5FD8FB2DBFC3F200700189 /* InsuranceApp */,
+				AD35F08D2DBFDE9D0014DA21 /* InsuranceAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AD35F08C2DBFDE9D0014DA21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD5FD8FA2DBFC3F200700189 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +188,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		AD35F08A2DBFDE9D0014DA21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AD5FD8F82DBFC3F200700189 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -124,9 +204,55 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		AD35F0932DBFDE9D0014DA21 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD5FD8FB2DBFC3F200700189 /* InsuranceApp */;
+			targetProxy = AD35F0922DBFDE9D0014DA21 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		AD35F0952DBFDE9D0014DA21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XDB22KM8KS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rocket.InsuranceAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InsuranceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InsuranceApp";
+			};
+			name = Debug;
+		};
+		AD35F0962DBFDE9D0014DA21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XDB22KM8KS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rocket.InsuranceAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InsuranceApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/InsuranceApp";
+			};
+			name = Release;
+		};
 		AD5FD9052DBFC3F400700189 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AD5FD8FE2DBFC3F200700189 /* InsuranceApp */;
+			baseConfigurationReferenceRelativePath = Configuration/Development.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -191,6 +317,8 @@
 		};
 		AD5FD9062DBFC3F400700189 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AD5FD8FE2DBFC3F200700189 /* InsuranceApp */;
+			baseConfigurationReferenceRelativePath = Configuration/Development.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -248,6 +376,8 @@
 		};
 		AD5FD9082DBFC3F500700189 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AD5FD8FE2DBFC3F200700189 /* InsuranceApp */;
+			baseConfigurationReferenceRelativePath = Configuration/Development.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -256,6 +386,7 @@
 				DEVELOPMENT_TEAM = XDB22KM8KS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -277,6 +408,8 @@
 		};
 		AD5FD9092DBFC3F500700189 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = AD5FD8FE2DBFC3F200700189 /* InsuranceApp */;
+			baseConfigurationReferenceRelativePath = Configuration/Development.xcconfig;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -285,6 +418,7 @@
 				DEVELOPMENT_TEAM = XDB22KM8KS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InsuranceApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -307,6 +441,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AD35F0942DBFDE9D0014DA21 /* Build configuration list for PBXNativeTarget "InsuranceAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD35F0952DBFDE9D0014DA21 /* Debug */,
+				AD35F0962DBFDE9D0014DA21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AD5FD8F72DBFC3F200700189 /* Build configuration list for PBXProject "InsuranceApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
