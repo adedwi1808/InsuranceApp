@@ -21,6 +21,11 @@ struct ClaimsView: View {
                 }
                 .listStyle(.plain)
                 .searchable(text: $viewModel.searchText)
+                .refreshable {
+                    Task {
+                        try await viewModel.getClaims()
+                    }
+                }
             }
             
             if viewModel.isLoading {
@@ -35,6 +40,16 @@ struct ClaimsView: View {
             Task {
                 try await viewModel.getClaims()
             }
+        }
+        .alert(
+            "Something Went Wrong",
+            isPresented: $viewModel.isError
+        ) {
+            Button("Close") {
+                viewModel.closeAlert()
+            }
+        } message: {
+            Text(viewModel.errorMessages)
         }
     }
 }

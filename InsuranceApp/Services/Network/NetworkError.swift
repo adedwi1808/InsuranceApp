@@ -18,7 +18,7 @@ enum NetworkError: Error, LocalizedError {
         case .middlewareError(_, let message):
             return message
         case .internetError:
-            return ""
+            return "Upss, please check your network"
         case .decodingError(let message):
             return message
         case .unAuthorized:

@@ -16,6 +16,8 @@ class ClaimsViewModel: ObservableObject {
     }
     @Published var filteredClaims: [Claim] = []
     @Published var isLoading: Bool = false
+    @Published var isError: Bool = false
+    @Published var errorMessages: String = ""
     
     var services: ClaimsServiceProtocol
     
@@ -26,14 +28,20 @@ class ClaimsViewModel: ObservableObject {
     @MainActor
     func getClaims() async throws {
         isLoading = true
+        isError = false
         do {
             let response = try await services.getClaims(endpoint: .posts)
             mapClaimResponses(response: response)
             isLoading = false
         } catch let error as NetworkError {
-            print(error)
+            errorMessages = error.localizedDescription
+            isError = true
             isLoading = false
         }
+    }
+    
+    func closeAlert() {
+        isError = false
     }
     
     private func mapClaimResponses(response: [ClaimResponseModel]) {
