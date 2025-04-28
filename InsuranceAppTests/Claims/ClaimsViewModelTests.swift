@@ -80,7 +80,112 @@ final class ClaimsViewModelTests: XCTestCase {
         XCTAssertEqual(sut.isError, true)
         XCTAssertEqual(sut.errorMessages, "unauthorized")
     }
+    
+    func test_closeAlert_afterErrorShowup() async throws {
+        let stub: StubClaimsService = StubClaimsService(result: .error(error: .internetError(message: "Upss, please check your network")))
+        sut = ClaimsViewModel(services: ClaimsService(networker: stub))
+        try await sut.getClaims()
+        
+        XCTAssertEqual(sut.isError, true)
+        XCTAssertEqual(sut.errorMessages, "Upss, please check your network")
+        
+        sut.closeAlert()
+        
+        XCTAssertEqual(sut.isError, false)
+    }
+    
+    func test_closeAlert_evenNoErrorOccured() async throws {
+        let mockData: [ClaimResponseModel] = [
+            ClaimResponseModel(
+                userID: 101,
+                id: 1,
+                title: "Claims Insurance",
+                body: "Claim Description"
+            ),
+            ClaimResponseModel(
+                userID: 111,
+                id: 2,
+                title: "Claims Insurance 2",
+                body: "Claim Description 2"
+            )
+        ]
+        
+        let stub: StubClaimsService = StubClaimsService(result: .success(data: mockData))
+        sut = ClaimsViewModel(services: ClaimsService(networker: stub))
+        try await sut.getClaims()
+        
+        XCTAssertEqual(sut.isError, false)
+        
+        sut.closeAlert()
+        
+        XCTAssertEqual(sut.isError, false)
+    }
 
+    
+    func test_filterClaims_whenNoData() async throws {
+        let mockData: [ClaimResponseModel] = []
+        
+        let stub: StubClaimsService = StubClaimsService(result: .success(data: mockData))
+        sut = ClaimsViewModel(services: ClaimsService(networker: stub))
+        try await sut.getClaims()
+        
+        XCTAssertEqual(sut.isError, false)
+        
+        sut.searchText = "Claims"
+        XCTAssertEqual(sut.filteredClaims.count, 0)
+    }
+    
+    func test_filterClaims_whenDataExist() async throws {
+        let mockData: [ClaimResponseModel] = [
+            ClaimResponseModel(
+                userID: 101,
+                id: 1,
+                title: "Claims Insurance",
+                body: "Claim Description"
+            ),
+            ClaimResponseModel(
+                userID: 111,
+                id: 2,
+                title: "Claims Insurance 2",
+                body: "Claim Description 2"
+            )
+        ]
+        
+        let stub: StubClaimsService = StubClaimsService(result: .success(data: mockData))
+        sut = ClaimsViewModel(services: ClaimsService(networker: stub))
+        try await sut.getClaims()
+        
+        XCTAssertEqual(sut.isError, false)
+        
+        sut.searchText = "Claims Insurance 2"
+        XCTAssertEqual(sut.filteredClaims.count, 1)
+    }
+    
+    func test_filterClaims_whenDataExist_noMatchingData() async throws {
+        let mockData: [ClaimResponseModel] = [
+            ClaimResponseModel(
+                userID: 101,
+                id: 1,
+                title: "Claims Insurance",
+                body: "Claim Description"
+            ),
+            ClaimResponseModel(
+                userID: 111,
+                id: 2,
+                title: "Claims Insurance 2",
+                body: "Claim Description 2"
+            )
+        ]
+        
+        let stub: StubClaimsService = StubClaimsService(result: .success(data: mockData))
+        sut = ClaimsViewModel(services: ClaimsService(networker: stub))
+        try await sut.getClaims()
+        
+        XCTAssertEqual(sut.isError, false)
+        
+        sut.searchText = "Claims Insurance 75"
+        XCTAssertEqual(sut.filteredClaims.count, 0)
+    }
 }
 
 extension ClaimsViewModelTests {
