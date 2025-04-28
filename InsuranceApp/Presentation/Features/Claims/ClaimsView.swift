@@ -22,6 +22,11 @@ struct ClaimsView: View {
             .searchable(text: $viewModel.searchText)
         }
         .navigationTitle("Claims")
+        .onAppear {
+            Task {
+                try await viewModel.getClaims()
+            }
+        }
     }
 }
 
