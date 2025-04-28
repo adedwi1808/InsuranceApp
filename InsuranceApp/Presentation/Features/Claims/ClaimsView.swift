@@ -19,6 +19,7 @@ struct ClaimsView: View {
                 }
             }
             .listStyle(.plain)
+            .searchable(text: $viewModel.searchText)
         }
         .navigationTitle("Claims")
     }

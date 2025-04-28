@@ -9,4 +9,5 @@ import Foundation
 
 class ClaimsViewModel: ObservableObject {
     var claims: [Claim] = Claim.claimsDummy
+    var searchText: String = ""
 }
