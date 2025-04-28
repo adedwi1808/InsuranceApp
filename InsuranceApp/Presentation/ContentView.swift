@@ -11,7 +11,7 @@ struct ContentView: View {
     @StateObject var navigationManager: NavigationManager = NavigationManager()
     var body: some View {
         NavigationStack(path: $navigationManager.path) {
-            Text("Hello Ade!")
+            ClaimsView()
                 .environmentObject(navigationManager)
                 .navigationDestination(for: Route.self) {
                     navigationManager.routesDestination(selectedRoutes: $0)
